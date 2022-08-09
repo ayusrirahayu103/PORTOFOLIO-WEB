@@ -1,0 +1,10 @@
+#Gambar {
+    display: flex;
+    width: 500px;
+}
+
+#input {
+    margin-left: 80px;
+    margin-top: 20px;
+    width: 200px;
+}
