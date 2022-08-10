@@ -9,13 +9,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>
+<body class="flex justify-center w-full h-screen bg-sky-600 text-white">
     <div class="flex flex-col justify-center items-center w-full h-screen" id="app">
-        <h1>RANDOM GENERATOR</h1>
-        <img :src="gambar" class="w-[250px] rounded-full">
-        <h1>{{namaAwal}} {{namaAkhir}}</h1>
-        <button class="border-[3px] text-[18px] p-2 bg-black text-white" @click ="randomName()">Generate Image</button>
+        <h1 class ="font-bold text-[50px]">Warung Makanan dan Minuman</h1>
+    <div class="flex gap-x-8">
+        <button class="border-[3px] text-[18px] p-2 bg-black text-white" @click ="warungFood()">Warung Makanan</button>
+        <button class="border-[3px] text-[18px] p-2 bg-black text-white" @click ="warungDrink()">Warung Minuman</button>
     </div>
-    <script src="./index.js"></script>
+
+    <div id="view">
+        <ul v-for="(data, index) in makanan">
+            {{index+1}} {{data.nama}} {{data.rasa}}
+        </ul>
+    </div>
+
+    <div id="view">
+        <ul v-for="(data, index) in minuman">
+            {{index+1}} {{data.nama}} {{data.rasa}}
+        </ul>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -5,30 +5,30 @@ const app = createApp({
 
         const linkFood = "http://localhost:5000/makanan";
         const linkDrink = "http://localhost:5000/minuman";
-        const food = ref("");
-        const drink = ref("");
+        const makanan = ref([]);
+        const minuman = ref([]);
         const div = document.getElementById("view");
 
         const warungFood = async () => {
            const respond = await axios.get(linkFood);
 
-           food.value = respond.data;
-           drink.value = [];
+           makanan.value = respond.data;
+           minuman.value = [];
         };
 
         const warungDrink = async () => {
             const respond = await axios.get(linkDrink);
  
-            drink.value = respond.data;
-            food.value = [];
-         };
+            minuman.value = respond.data;
+            makanan.value = [];
+        };
  
 
         return {
             warungFood,
             warungDrink,
-            food,
-            drink,
+            makanan,
+            minuman,
             div,
         };
     },
